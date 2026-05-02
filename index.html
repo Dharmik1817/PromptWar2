@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoteWise AI - Premium Election Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Top Navigation -->
+      <nav class="glass-nav">
+        <div class="logo">
+          <i class="ph ph-fingerprint"></i> VoteWise AI
+        </div>
+        <div class="nav-actions">
+          <button id="btn-journey-demo" class="btn-outline" aria-label="Election Journey">
+            <i class="ph ph-presentation-chart"></i> Scrollytelling Journey
+          </button>
+          <button id="btn-candidates" class="btn-outline" aria-label="Know Your Candidate">
+            <i class="ph ph-users"></i> Deep Research
+          </button>
+          <button id="btn-recovery" class="btn-outline" aria-label="Recover Lost Voter Slip">
+            <i class="ph ph-magnifying-glass"></i> Find Voter Slip
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main id="main-content" class="container">
+        
+        <!-- Screen 1: Home / Onboarding -->
+        <section id="screen-home" class="screen active">
+          <div class="hero">
+            <h1>The Truth Behind Your Vote</h1>
+            <p>Experience the election process visually. Uncover the brutal reality of your candidates.</p>
+          </div>
+          
+          <div class="glass-card profile-setup">
+            <h2>Personalize Your Dashboard</h2>
+            <form id="profile-form">
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="18" max="120" required placeholder="e.g. 25">
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                  <option value="" disabled selected>Select your state...</option>
+                  <option value="DL">Delhi</option>
+                  <option value="MH">Maharashtra</option>
+                  <option value="KA">Karnataka</option>
+                  <option value="UP">Uttar Pradesh</option>
+                  <option value="TN">Tamil Nadu</option>
+                </select>
+              </div>
+              <div class="form-group toggle-group">
+                <label for="first-time">First-time voter?</label>
+                <label class="switch">
+                  <input type="checkbox" id="first-time" name="first-time">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <button type="submit" class="btn-primary btn-large">Generate Dashboard <i class="ph ph-arrow-right"></i></button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Screen 2: Personalized Voting Journey -->
+        <section id="screen-journey" class="screen hidden">
+          <div class="header-with-action">
+            <h2>Your Dashboard</h2>
+            <button class="btn-back"><i class="ph ph-arrow-left"></i> Home</button>
+          </div>
+          
+          <div class="journey-layout">
+            <div class="roadmap-container glass-card">
+              <h3>Action Plan</h3>
+              <ul class="roadmap" id="roadmap-list">
+                <!-- Roadmap steps will be injected here -->
+              </ul>
+            </div>
+            
+            <div class="readiness-checker glass-card">
+              <h3>Readiness Status</h3>
+              <div class="progress-bar-container mt-2">
+                <div class="progress-bar" id="readiness-progress" style="width: 0%"></div>
+              </div>
+              <p id="readiness-status" class="status-text mt-2 yellow">Pending</p>
+              
+              <div class="actions-grid mt-4">
+                 <button class="btn-primary w-full" onclick="document.getElementById('btn-candidates').click()"><i class="ph ph-detective"></i> Deep Research Candidates</button>
+                 <button class="btn-secondary w-full mt-2" onclick="document.getElementById('btn-journey-demo').click()"><i class="ph ph-eye"></i> View Scrollytelling Journey</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Screen 3: Voter Lookup & Recovery -->
+        <section id="screen-lookup" class="screen hidden">
+           <div class="header-with-action">
+            <h2>Lost Voter Slip Recovery</h2>
+            <button class="btn-back"><i class="ph ph-arrow-left"></i> Home</button>
+          </div>
+          <div class="glass-card">
+            <p class="alert alert-info"><i class="ph ph-shield-check"></i> Zero-PII Simulation Engine Active.</p>
+            <div class="tabs">
+              <button class="tab-btn active" data-target="epic-search">Search by EPIC</button>
+              <button class="tab-btn" data-target="detail-search">Search by Details</button>
+            </div>
+            <div id="epic-search" class="tab-content active">
+              <form id="search-epic-form" class="search-form">
+                <input type="text" id="epic-number" placeholder="Enter EPIC (e.g., ABC1234567)" required>
+                <button type="submit" class="btn-primary">Search</button>
+              </form>
+            </div>
+            <div id="detail-search" class="tab-content hidden">
+              <form id="search-detail-form" class="search-form vertical">
+                <input type="text" id="voter-name" placeholder="Full Name" required>
+                <input type="date" id="voter-dob" required>
+                <button type="submit" class="btn-primary">Search</button>
+              </form>
+            </div>
+            <div id="lookup-results" class="results-card hidden mt-4">
+              <!-- Results injected here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Screen 4: Map View -->
+        <section id="screen-map" class="screen hidden">
+           <div class="header-with-action">
+            <h2>Secure Navigation</h2>
+            <button class="btn-back"><i class="ph ph-arrow-left"></i> Back</button>
+          </div>
+          <div class="glass-card map-container">
+             <div id="map-mock" class="mock-map">
+                <div class="map-overlay">
+                   <h3 id="booth-name">Loading...</h3>
+                   <p id="booth-address" class="text-sm">Location data</p>
+                   <button class="btn-primary mt-2"><i class="ph ph-navigation-arrow"></i> Start Route</button>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <!-- Screen 5: Know Your Candidate (Brutal Reality) -->
+        <section id="screen-candidates" class="screen hidden">
+          <div class="header-with-action">
+            <h2>Candidate Dossiers</h2>
+            <button class="btn-back"><i class="ph ph-arrow-left"></i> Home</button>
+          </div>
+          <p class="alert alert-warning"><i class="ph ph-warning"></i> Data includes verified criminal convictions, pending FIRs, and financial disclosures.</p>
+          <div id="candidates-container" class="candidate-grid">
+             <!-- Complex candidate cards injected via JS -->
+          </div>
+        </section>
+      </main>
+
+      <!-- Screen 6: Election Journey Demo (Scrollytelling) -->
+      <!-- This is pulled OUT of the main container so it can be full-width -->
+      <section id="screen-journey-demo" class="screen hidden scrollytelling-section">
+         <div class="scrollytelling-header">
+            <button class="btn-back fixed-back"><i class="ph ph-arrow-left"></i> Exit Journey</button>
+            <h2>The Election Engine</h2>
+            <p>Scroll down to experience the process.</p>
+         </div>
+         
+         <div class="scrollytelling-container">
+            <!-- Sticky Visuals -->
+            <div class="sticky-visuals">
+               <img id="scroll-img-1" class="scroll-img active" src="/notif_img.png" alt="Notification">
+               <img id="scroll-img-2" class="scroll-img" src="/nomination_img.png" alt="Campaign">
+               <img id="scroll-img-3" class="scroll-img" src="/inking_img.png" alt="Inking">
+               <img id="scroll-img-4" class="scroll-img" src="/evm_img.png" alt="Voting">
+               <div class="scroll-overlay"></div>
+            </div>
+
+            <!-- Scrolling Text Blocks -->
+            <div class="scroll-text-container">
+               <div class="scroll-step" data-step="1">
+                  <div class="glass-card-dark">
+                     <h3>1. The Notification</h3>
+                     <p>The Election Commission announces the dates. The Model Code of Conduct comes into effect immediately, freezing new government schemes.</p>
+                  </div>
+               </div>
+               <div class="scroll-step" data-step="2">
+                  <div class="glass-card-dark">
+                     <h3>2. Nominations & Campaigns</h3>
+                     <p>Candidates file their affidavits. This is when criminal records and financial assets are made public. Rallies and door-to-door campaigns dominate the city.</p>
+                  </div>
+               </div>
+               <div class="scroll-step" data-step="3">
+                  <div class="glass-card-dark">
+                     <h3>3. Verification & Inking</h3>
+                     <p>You arrive at the booth. Officers verify your Voter ID against the electoral roll. Your left index finger is marked with indelible ink to prevent double voting.</p>
+                  </div>
+               </div>
+               <div class="scroll-step" data-step="4">
+                  <div class="glass-card-dark">
+                     <h3>4. The EVM</h3>
+                     <p>You step behind the privacy screen. You press the blue button next to your candidate's symbol on the Electronic Voting Machine. The red light glows, and a long beep confirms your vote.</p>
+                  </div>
+               </div>
+               <div class="scroll-step" data-step="5">
+                  <div class="glass-card-dark end-journey">
+                     <h3>Journey Complete</h3>
+                     <p>Your voice has been registered.</p>
+                     <button class="btn-primary mt-4 btn-back-internal">Return to Dashboard</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- AI Assistant Floating Widget -->
+      <div class="ai-widget">
+        <button id="ai-toggle" class="ai-btn glass-btn">
+          <i class="ph ph-sparkle"></i> Ask VoteWise AI
+        </button>
+        <div id="ai-chat-window" class="chat-window hidden glass-card">
+          <div class="chat-header">
+            <h3><i class="ph ph-robot"></i> VoteWise Assistant</h3>
+            <button id="ai-close" class="icon-btn"><i class="ph ph-x"></i></button>
+          </div>
+          <div class="chat-messages" id="chat-messages">
+             <div class="message ai">Hi! Need help decoding a candidate's criminal record, or verifying a document?</div>
+          </div>
+          <div class="chat-input-area">
+             <button id="btn-upload-doc" class="icon-btn tooltip-container" aria-label="Verify Document">
+                <i class="ph ph-camera"></i>
+                <span class="tooltip">Document Check</span>
+             </button>
+             <input type="text" id="chat-input" placeholder="Type your question...">
+             <button id="btn-send-chat" class="icon-btn btn-primary"><i class="ph ph-paper-plane-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

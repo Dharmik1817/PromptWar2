@@ -1,0 +1,114 @@
+[
+  {
+    "id": "cand-1",
+    "name": "Amit Desai",
+    "age": 32,
+    "experience": "New Candidate",
+    "party": "Progressive Youth Front",
+    "symbol": "ph-lightbulb",
+    "tagline": "A fresh vision for a modern city.",
+    "assets": "₹ 45 Lakhs",
+    "liabilities": "₹ 12 Lakhs",
+    "pastWork": [
+      "Founded a local NGO focusing on digital literacy for underprivileged students.",
+      "Spearheaded the 'Clean Lakes' citizen initiative in 2024."
+    ],
+    "manifesto": [
+      "Implement city-wide free public Wi-Fi zones within 2 years.",
+      "Establish a startup incubation center to boost local youth employment."
+    ],
+    "criminalRecords": {
+      "proved": [],
+      "pending": [],
+      "allegations": [
+        "Accused of violating code of conduct during university elections (2018)."
+      ]
+    }
+  },
+  {
+    "id": "cand-2",
+    "name": "Suresh Rao",
+    "age": 58,
+    "experience": "Veteran Leader (20+ Years)",
+    "party": "National Democratic Alliance",
+    "symbol": "ph-handshake",
+    "tagline": "Experience you can trust.",
+    "assets": "₹ 14.5 Crores",
+    "liabilities": "₹ 2.1 Crores",
+    "pastWork": [
+      "Served as Mayor (2015-2020), overseeing the construction of 3 new flyovers.",
+      "Successfully lobbied for central funds to upgrade the district hospital."
+    ],
+    "manifesto": [
+      "Complete the ongoing Metro Phase-2 project ahead of schedule.",
+      "Increase pensions for senior citizens and widows by 20%."
+    ],
+    "criminalRecords": {
+      "proved": [
+        "Convicted under Prevention of Damage to Public Property Act during 2012 protests (Fined ₹50,000)."
+      ],
+      "pending": [
+        "FIR registered under Sec 420 (Cheating) related to a land allocation dispute (Case pending in High Court)."
+      ],
+      "allegations": [
+        "Multiple media reports alleging favoritism in awarding municipal contracts (2018)."
+      ]
+    }
+  },
+  {
+    "id": "cand-3",
+    "name": "Meera Kapoor",
+    "age": 45,
+    "experience": "Incumbent MLA",
+    "party": "United Citizens Party",
+    "symbol": "ph-scales",
+    "tagline": "Justice and equality for all.",
+    "assets": "₹ 3.2 Crores",
+    "liabilities": "₹ 0",
+    "pastWork": [
+      "Passed legislation mandating 30% female representation in local municipal contracts.",
+      "Upgraded 50 government schools with smart classrooms."
+    ],
+    "manifesto": [
+      "Expand the subsidized healthcare clinic network to every ward.",
+      "Create a dedicated fund for women entrepreneurs."
+    ],
+    "criminalRecords": {
+      "proved": [],
+      "pending": [
+        "Defamation case filed by a rival political leader (Sec 499 IPC)."
+      ],
+      "allegations": []
+    }
+  },
+  {
+    "id": "cand-4",
+    "name": "Ravi Kumar",
+    "age": 40,
+    "experience": "Former Union Leader",
+    "party": "Workers Rights Alliance",
+    "symbol": "ph-hammer",
+    "tagline": "Voice of the working class.",
+    "assets": "₹ 18 Lakhs",
+    "liabilities": "₹ 5 Lakhs",
+    "pastWork": [
+      "Negotiated a historic minimum wage increase for textile workers in 2022.",
+      "Organized massive relief camps during the 2023 floods."
+    ],
+    "manifesto": [
+      "Guarantee minimum support price for local agricultural produce.",
+      "Regularize all contractual sanitation workers with full benefits."
+    ],
+    "criminalRecords": {
+      "proved": [
+        "Convicted for unlawful assembly and rioting during a 2015 labor strike (Served 1-month sentence)."
+      ],
+      "pending": [
+        "Charged under Sec 144 for organizing unauthorized protests (2023)."
+      ],
+      "allegations": [
+        "Accused of inciting violence during union negotiations, though never formally charged."
+      ]
+    }
+  }
+]

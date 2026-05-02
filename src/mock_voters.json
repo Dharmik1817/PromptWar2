@@ -1,0 +1,22 @@
+[
+  {
+    "epic": "ABC1234567",
+    "name": "Rahul Sharma",
+    "dob": "1990-01-01",
+    "state": "DL",
+    "boothName": "Govt Boys Senior Secondary School, Rohini",
+    "boothAddress": "Sector 7, Rohini, New Delhi, DL",
+    "serialNumber": "342",
+    "partNumber": "15"
+  },
+  {
+    "epic": "XYZ9876543",
+    "name": "Priya Patel",
+    "dob": "1985-05-15",
+    "state": "MH",
+    "boothName": "Municipal Corporation Primary School, Andheri",
+    "boothAddress": "Andheri East, Mumbai, MH",
+    "serialNumber": "812",
+    "partNumber": "22"
+  }
+]
