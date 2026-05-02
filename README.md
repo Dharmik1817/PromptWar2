@@ -6,7 +6,7 @@ Developed for the **Google Hack2Skill PromptWar Challenge**, this project priori
 
 ## 🚀 Key Features
 
-### 1. Immersive "Scrollytelling" Journey
+### 1. Know Election Process (Immersive Scrollytelling)
 Experience the 5 essential stages of the Indian election lifecycle through a premium, scroll-driven visual narrative:
 - **Notification**: Understanding the Election Commission's call to action.
 - **Nominations & Campaigns**: Deep dive into candidate transparency.
@@ -14,7 +14,7 @@ Experience the 5 essential stages of the Indian election lifecycle through a pre
 - **Casting Your Vote**: Using the EVM machine with privacy and security.
 - **Counting & Results**: The final stage of the democratic process.
 
-### 2. "Know Your Candidate" Deep Research
+### 2. Know Your Candidate (Brutal Reality)
 A brutally realistic candidate explorer that highlights:
 - **Criminal Records**: Transparent breakdown of Confirmed Convictions (Red), Pending FIRs (Orange), and Unproven Allegations (Yellow).
 - **Financial Disclosures**: Declared assets and liabilities for full transparency.
